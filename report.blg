@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report.aux
+The style file: utf8gost705u.bst
+Database file #1: biblio.bib
+Warning--string name "russian" is undefined
+--line 8 of file biblio.bib
+I was expecting a `,' or a `}'---line 17 of file biblio.bib
+ :    
+ :    language = russian
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 2 entries,
+            2958 wiz_defined-function locations,
+            679 strings with 5679 characters,
+and the built_in function-call counts, 640 in all, are:
+= -- 88
+> -- 10
+< -- 2
++ -- 4
+- -- 2
+* -- 19
+:= -- 72
+add.period$ -- 9
+call.type$ -- 2
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 35
+empty$ -- 62
+format.name$ -- 2
+if$ -- 173
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 0
+newline$ -- 22
+num.names$ -- 6
+pop$ -- 17
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 25
+stack$ -- 0
+substring$ -- 12
+swap$ -- 25
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 3
+width$ -- 3
+write$ -- 42
+(There was 1 error message)

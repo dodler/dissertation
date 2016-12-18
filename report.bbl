@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{lukashin2003}
+\selectlanguageifdefined{russian}
+Ю.П.~Лукашин. Адаптивные методы
+  краткосрочного прогнозирования
+  временных рядов.
+\newblock Финансы и статистика, 2003.
+\newblock 416~{с.}
+
+\bibitem{zhuravlev78}
+\selectlanguageifdefined{russian}
+Журавлёв~Ю.~И. Об алгебраическом подходе к
+  решению задач распознавания или
+  классификации. — Вып.33~// Проблемы
+  кибернетики.
+\newblock 1978.
+\newblock {с.}~5–68. URL:
+  http://www.ccas.ru/frc/papers/zhuravlev78prob33.pdf.
+
+\end{thebibliography}
