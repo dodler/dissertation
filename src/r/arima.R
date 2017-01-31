@@ -1,11 +1,11 @@
 library(ggplot2)
 library(forecast)
 
-setwd("C:/Users/SBT-Lyan-AI/Documents/dissertation/data/")
+setwd("C:/Users/SBT-Lyan-AI/Documents/dissertation/")
 
-data <- read.csv('sber.csv')
+data <- read.csv('data/sber.csv')
 
-CUT_UP = 0.7
+CUT_UP = 0.9
 train_length <- floor(length(data$Date) * CUT_UP)
 data_length <- length(data$Date)
 test_length <- data_length - train_length
@@ -53,23 +53,26 @@ ggplot(data=result_data, aes(x=index, group=1)) +
 #-------
 #holt winters
 
-holt_model <- holt(train$Open, alpha=0.2, h=test_length)
-holt_pred <- predict(holt_model, test_length)
+holt_model <- holt(train$Open, alpha=0.2, h=3)
+holt_pred <- predict(holt_model, 3)
 
-plot(holt_pred$mean[1:10], type="l", col="green")
-lines(test$Open[1:10], type="l", col="red")
-
-# doesnt work well
+plot(holt_pred, type="l", col="green")
+lines(data$Open, type="l", col="red")
 
 #--------
-#exponential smoothing
 
-expon1 <- ses(train$Open, alpha=0.95, h=3)
-expon2 <- ses(train$Open, alpha=0.5, h=5)
-expon3 <- ses(train$Open, alpha=0.1, h=7)
-plot(fitted(expon), col="red")
-lines(train$Open, col="green")
-lines(fitted(expon2), col="blue")
-lines(fitted(expon3), col="cyan")
+exp_test <- fitted(ses(test$Open), alpha=0.5, h=2)
+plot(exp_test, type="l", col="green")
+lines(test$Open, type="l", col="red")
+
+source("src/r/image_prediction.R")
+
+result <- (predict_image(test$Open))
+plot(test$Open, type="l", col="green")
+lines(result[30,1:127], type="l", col="black")
+lines(result[25,1:127], type="l", col="red")
+lines(result[35,1:127], type="l", col="cyan")
+lines(result[40,1:127], type="l", col="blue")
+
 
 

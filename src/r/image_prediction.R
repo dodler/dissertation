@@ -1,7 +1,9 @@
+library(spatstat)
+
 es_num <- 50
-es_low_bound <- 0.001
+es_low_bound <- 0.09
 es_high_bound <- 0.999
-es_pred_num <- 5
+es_pred_num <- 2
 
 # es stands for exponential smoothing
 
@@ -13,7 +15,7 @@ predict_image <- function(series){
   
   result <- fitted(ses(series, alpha=cur_alpha, h=es_pred_num))
   
-  for(i in (1:es_num)){
+  for(i in (2:es_num)){
     
     es <- fitted(ses(series, alpha=cur_alpha, h=es_pred_num))
     
@@ -25,5 +27,5 @@ predict_image <- function(series){
   #max_res_val <- max(result)
   #result <- result/max_res_val
   
-  return (blur(as.im(result), sigma=10)$v)
+  return (blur(as.im((result)), sigma=1)$v)
 }
